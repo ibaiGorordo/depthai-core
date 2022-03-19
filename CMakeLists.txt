@@ -495,6 +495,15 @@ if(DEPTHAI_OPENCV_SUPPORT)
 endif()
 
 ########################
+# Android logging
+########################
+if(ANDROID)
+    find_library(log-lib log)
+    target_link_libraries(${TARGET_CORE_NAME} PUBLIC ${log-lib})
+endif()
+
+
+########################
 # Sanitizers
 ########################
 if(DEPTHAI_SANITIZE)
